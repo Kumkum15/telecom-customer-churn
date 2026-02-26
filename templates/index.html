@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurnGuard AI | retention Strategy</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="data:,">
+</head>
+<body>
+    <div class="hero-section" id="hero">
+        <div class="glass-box">
+            <h1>ChurnGuard AI Analysis</h1>
+            <p>Harness the power of Machine Learning to predict customer retention. <br> 
+               Our high-precision model identifies at-risk customers before they leave.</p>
+            <button onclick="showForm()" class="main-btn">Check Customer Churn</button>
+        </div>
+    </div>
+
+    <div id="formSection" class="hidden">
+        <div class="form-card">
+            <h2>Customer Details</h2>
+            <form id="churnForm">
+                <div class="grid-form">
+                    <div class="input-group">
+                        <label>Tenure (Months) *</label>
+                        <input type="number" name="tenure" placeholder="e.g. 12" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Monthly Charges ($) *</label>
+                        <input type="number" step="0.01" name="MonthlyCharges" placeholder="e.g. 75.50" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Contract Type *</label>
+                        <select name="Contract" required>
+                            <option value="Month-to-month">Month-to-month</option>
+                            <option value="One year">One year</option>
+                            <option value="Two year">Two year</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Internet Service</label>
+                        <select name="InternetService">
+                            <option value="Fiber optic">Fiber optic</option>
+                            <option value="DSL">DSL</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Online Security</label>
+                        <select name="OnlineSecurity">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Tech Support</label>
+                        <select name="TechSupport">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Paperless Billing</label>
+                        <select name="PaperlessBilling">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Total Charges ($)</label>
+                        <input type="number" step="0.01" name="TotalCharges" placeholder="Optional">
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Generate Analysis</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="resultBox" class="hidden">
+        <div class="form-card result-card">
+            <div id="animationContainer" style="font-size: 60px; margin-bottom: 10px;"></div>
+            
+            <h3 id="statusTitle"></h3>
+            <p id="probText" style="font-weight: bold;"></p>
+            
+            <div class="insight-box">
+                <p><strong>Brief Reason:</strong></p>
+                <p id="reasonText" style="color: #ccd6f6;"></p>
+            </div>
+
+            <div id="improvementSection" class="hidden">
+                <hr style="border: 0.5px solid #64ffda; opacity: 0.3; margin: 20px 0;">
+                <h4 style="color: #64ffda;">💡 Retention Strategy & Improvements:</h4>
+                <p id="improvementText" style="color: #8892b0; font-size: 0.95rem;"></p>
+            </div>
+
+            <button onclick="restart()" class="main-btn" style="margin-top: 25px;">Analyze Another Customer</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
